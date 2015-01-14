@@ -27,6 +27,13 @@ class Term
     @@all_terms = []
   end
 
-  # define_method(:add) do
-
+  define_singleton_method(:search) do |search_word|
+    result = nil
+    @@all_terms.each() do |object|
+      if object.list() == search_word
+        result = object
+      end
+    end
+    result
+  end
 end

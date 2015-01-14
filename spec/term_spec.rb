@@ -44,14 +44,6 @@ describe(Term) do
     end
   end
 
-  # describe("#add") do
-  #   it("adds an object to the array") do
-  #     new_word = Term.new("Carrot", "Is Orange")
-  #     new_word.add("Ingredient to my favorite cake")
-  #     expect(Term.all()).to(eq("Carrot", "Is Orange", "Ingredient to my favorite cake"))
-  #   end
-  # end
-
   describe("#save") do
     it("saves a term") do
       new_word = Term.new("Carrot", "Is Orange")
@@ -59,4 +51,15 @@ describe(Term) do
       expect(Term.all()).to(eq([new_word]))
     end
   end
+
+  describe(".search") do
+    it("allows the user to search for a word/definition") do
+      new_word = Term.new("Carrot", "Is Orange")
+      new_word_two = Term.new("Apple", "Is Red")
+      new_word_two.save()
+      new_word.save()
+      expect(Term.search("Carrot")).to(eq(new_word))
+    end
+  end
+
 end

@@ -1,18 +1,19 @@
-class Term
+class Word
 
   @@all_terms = []
 
-  define_method(:initialize) do |term, definition|
+  define_method(:initialize) do |term, id|
     @term = term
     @definition = definition
+    @id = id
+  end
+
+  define_singleton_method(:id) do
+    @id
   end
 
   define_method(:list) do
     @term
-  end
-
-  define_method(:show) do
-    @definition
   end
 
   define_method(:save) do

@@ -1,0 +1,7 @@
+
+<h3>Here is your dictionary!!</h3>
+
+<ul><% @all_terms.each() do |term| %>
+    <li> <%= term.list() %> : <%= term.show() %> </li>
+    <% end %>
+</ul>
